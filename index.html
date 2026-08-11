@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>A História de Miliane Almeida Muller</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff7fb;
+      color: #352536;
+      line-height: 1.7;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255, 247, 251, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #f0dce8;
+      padding: 12px 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #7c3f68;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #c05a91;
+    }
+
+    section {
+      padding: 90px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .hero {
+      min-height: 100vh;
+      max-width: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 80px;
+      background:
+        radial-gradient(circle at top, #f8d9e9, transparent 45%),
+        linear-gradient(135deg, #fff7fb, #fce8f3);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero-photo {
+      width: 210px;
+      height: 210px;
+      margin: 0 auto 30px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 6px solid white;
+      box-shadow: 0 15px 40px rgba(120, 55, 95, 0.18);
+      background: #f3d7e6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #925b7c;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-photo span {
+      font-size: 55px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 8vw, 75px);
+      color: #74345f;
+      margin-bottom: 15px;
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      color: #81576f;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .heart {
+      color: #d95b93;
+    }
+
+    h2 {
+      font-size: 36px;
+      text-align: center;
+      color: #74345f;
+      margin-bottom: 45px;
+    }
+
+    h3 {
+      color: #7c3f68;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 750px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 22px;
+      box-shadow: 0 8px 25px rgba(100, 50, 80, 0.08);
+      border: 1px solid #f1dce7;
+    }
+
+    .card .emoji {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #df9fbd;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 35px;
+      padding-left: 60px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 11px;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #c85c92;
+      border: 4px solid #fff7fb;
+      box-shadow: 0 0 0 2px #d995b5;
+    }
+
+    .timeline-year {
+      font-weight: bold;
+      color: #a04c7b;
+    }
+
+    .quote {
+      background: linear-gradient(135deg, #7c3f68, #b15b8d);
+      color: white;
+      padding: 45px 30px;
+      border-radius: 28px;
+      text-align: center;
+      font-size: 23px;
+      font-style: italic;
+      box-shadow: 0 15px 40px rgba(100, 50, 80, 0.2);
+    }
+
+    .dream {
+      text-align: center;
+      background: #fff;
+      padding: 40px 25px;
+      border-radius: 25px;
+      border: 1px solid #f0d7e5;
+    }
+
+    .dream-icon {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+    }
+
+    .photo {
+      height: 250px;
+      background: #f3dce8;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #91647e;
+      text-align: center;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-placeholder {
+      padding: 20px;
+    }
+
+    .photo-placeholder span {
+      font-size: 45px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .video-box {
+      background: white;
+      border-radius: 22px;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #f0dce7;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 16px;
+    }
+
+    .music {
+      text-align: center;
+      background: linear-gradient(135deg, #f3d5e5, #fcecf5);
+      border-radius: 30px;
+      padding: 45px 25px;
+    }
+
+    .music-icon {
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+
+    audio {
+      width: 100%;
+      max-width: 500px;
+      margin-top: 20px;
+    }
+
+    .special {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 25px;
+      border: 1px solid #f0dce7;
+      text-align: center;
+      font-size: 19px;
+    }
+
+    .future-list {
+      display: grid;
+      gap: 15px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .future-item {
+      background: white;
+      padding: 20px;
+      border-radius: 18px;
+      border-left: 5px solid #c85c92;
+    }
+
+    footer {
+      background: #442438;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    footer p {
+      opacity: 0.9;
+    }
+
+    .small {
+      font-size: 13px;
+      color: #8c687d;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        overflow-x: auto;
+        white-space: nowrap;
+        text-align: left;
+      }
+
+      nav a {
+        display: inline-block;
+      }
+
+      section {
+        padding: 80px 15px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#gostos">Gostos</a>
+    <a href="#amizades">Amigas</a>
+    <a href="#momentos">Momentos</a>
+    <a href="#sonhos">Sonhos</a>
+    <a href="#fotos">Fotos</a>
+    <a href="#mensagem">Mensagem</a>
+  </nav>
+
+  <!-- INÍCIO -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+
+      <!-- COLOQUE A FOTO PRINCIPAL AQUI -->
+      <div class="hero-photo">
+        <span>🌷</span>
+        <!--
+        Quando tiver a foto, use:
+        <img src="fotos/foto-principal.jpeg" alt="Miliane">
+        -->
+      </div>
+
+      <h1>Miliane Almeida Muller</h1>
+
+      <p class="subtitle">
+        A história de uma menina com sonhos, personalidade,
+        pessoas especiais e muitos momentos que fazem parte
+        de quem ela é.
+      </p>
+
+      <p style="margin-top:25px;font-size:28px;">
+        <span class="heart">♥</span>
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- SOBRE -->
+  <section id="sobre">
+
+    <h2>Quem é Miliane?</h2>
+
+    <div class="intro">
+      <p>
+        Miliane Almeida Muller nasceu em <strong>23 de outubro de 2011</strong>
+        e tem <strong>14 anos</strong>.
+      </p>
+
+      <p style="margin-top:20px;">
+        Ela é uma pessoa <strong>extrovertida</strong>, que gosta de
+        aproveitar os momentos, estar perto das pessoas que ama,
+        treinar, ouvir música, se maquiar, comer e dormir.
+      </p>
+
+      <p style="margin-top:20px;">
+        Esta página foi criada para guardar um pouco da história,
+        dos sonhos, das amizades, das conquistas e dos momentos
+        que fazem parte da vida dela.
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- GOSTOS -->
+  <section id="gostos">
+
+    <h2>Coisas que fazem parte dela</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="emoji">🤸‍♀️</div>
+        <h3>Ginástica</h3>
+        <p>
+          A ginástica e os treinos fazem parte da rotina e dos
+          momentos que ela gosta de viver.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🎧</div>
+        <h3>Música</h3>
+        <p>
+          Música é uma das coisas que acompanham Miliane,
+          principalmente BTS, Jennie e Tyler, the Creator.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">💄</div>
+        <h3>Maquiagem</h3>
+        <p>
+          Se maquiar é um dos hobbies que fazem parte do
+          jeito dela aproveitar o tempo.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🐟</div>
+        <h3>Comida favorita</h3>
+        <p>
+          Uma das comidas favoritas dela é <strong>salmão</strong>.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">😴</div>
+        <h3>Uma coisa que ela ama</h3>
+        <p>
+          Depois de treinar e aproveitar o dia, dormir também
+          está entre as coisas favoritas dela. 😂
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🌊</div>
+        <h3>Filme favorito</h3>
+        <p>
+          <strong>Avatar</strong> está entre os filmes/séries
+          favoritos dela.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MÚSICA -->
+  <section>
+
+    <h2>Uma música especial</h2>
+
+    <div class="music">
+
+      <div class="music-icon">🎵</div>
+
+      <h3 style="font-size:28px;">
+        HOME — BTS
+      </h3>
+
+      <p>
+        Uma música escolhida para fazer parte da história
+        deste site.
+      </p>
+
+      <!--
+      PARA COLOCAR O ARQUIVO DE ÁUDIO:
+      coloque a música na pasta "musica" e descomente:
+
+      <audio controls>
+        <source src="musica/home.mp3" type="audio/mpeg">
+      </audio>
+      -->
+
+      <p class="small">
+        A música pode ser adicionada aqui posteriormente.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- BTS -->
+  <section>
+
+    <h2>BTS 💜</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>RM</h3>
+        <p>Um dos sete integrantes do BTS.</p>
+      </div>
+
+      <div class="card">
+        <h3>Jin</h3>
+        <p>Um dos sete integrantes do BTS.</p>
+      </div>
+
+      <div class="card">
+        <h3>SUGA</h3>
+        <p>Um dos sete integrantes do BTS.</p>
+      </div>
+
+      <div class="card">
+        <h3>j-hope</h3>
+        <p>Um dos sete integrantes do BTS.</p>
+      </div>
+
+      <div class="card">
+        <h3>Jimin</h3>
+        <p>Um dos sete integrantes do BTS.</p>
+      </div>
+
+      <div class="card">
+        <h3>V</h3>
+        <p>Um dos sete integrantes do BTS.</p>
+      </div>
+
+      <div class="card">
+        <h3>Jung Kook</h3>
+        <p>Um dos sete integrantes do BTS.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ESCOLA -->
+  <section>
+
+    <h2>Vida escolar</h2>
+
+    <div class="special">
+
+      <h3>🏫 Escola Navegador Rodrigues Soromenho</h3>
+
+      <p style="margin-top:20px;">
+        A escola também faz parte da história de Miliane,
+        sendo um dos lugares onde ela vive experiências,
+        aprende, constrói amizades e cria memórias.
+      </p>
+
+      <p class="small">
+        Mais informações sobre a vida escolar podem ser
+        adicionadas futuramente.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- AMIGAS -->
+  <section id="amizades">
+
+    <h2>Amizades</h2>
+
+    <div class="intro">
+
+      <p>
+        Algumas pessoas especiais que fazem parte da vida
+        de Miliane são:
+      </p>
+
+    </div>
+
+    <div class="cards" style="margin-top:30px;">
+
+      <div class="card">
+        <div class="emoji">💗</div>
+        <h3>Bia</h3>
+        <p>Uma das amigas especiais de Miliane.</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">💗</div>
+        <h3>Pilar</h3>
+        <p>Uma das amigas especiais de Miliane.</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">💗</div>
+        <h3>Matilde</h3>
+        <p>Uma das amigas especiais de Miliane.</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">💗</div>
+        <h3>Clara</h3>
+        <p>Uma das amigas especiais de Miliane.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONQUISTAS -->
+  <section>
+
+    <h2>Uma conquista importante</h2>
+
+    <div class="quote">
+
+      <p>
+        “Aprender a se afastar de pessoas falsas também é
+        uma forma de cuidar de si mesma.”
+      </p>
+
+      <p style="margin-top:20px;font-size:17px;">
+        Uma das coisas que Miliane já realizou foi se afastar
+        de pessoas falsas e escolher ficar perto de quem
+        realmente faz bem para ela.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- MOMENTOS -->
+  <section id="momentos">
+
+    <h2>Momentos importantes</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="emoji">👭</div>
+        <h3>Com as amigas</h3>
+        <p>
+          Estar com as amigas e compartilhar conversas,
+          risadas e momentos faz parte da vida dela.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">❤️</div>
+        <h3>Conversar com você</h3>
+        <p>
+          Os momentos em que ela conversa com você também
+          são especiais.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🤸‍♀️</div>
+        <h3>Treinar</h3>
+        <p>
+          Os treinos são outro dos momentos que fazem parte
+          da rotina e da história dela.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- LINHA DO TEMPO -->
+  <section>
+
+    <h2>Linha do tempo</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-year">23/10/2011</div>
+        <h3>O começo da história</h3>
+        <p>
+          Nasce Miliane Almeida Muller.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">Infância</div>
+        <h3>Os primeiros capítulos</h3>
+        <p>
+          Espaço reservado para adicionar momentos marcantes
+          da infância dela.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">Hoje</div>
+        <h3>Miliane aos 14 anos</h3>
+        <p>
+          Uma garota extrovertida que gosta de treinar,
+          ouvir música, se maquiar, comer e dormir.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">Futuro</div>
+        <h3>Os próximos capítulos</h3>
+        <p>
+          Uma vida cheia de sonhos, planos e novas experiências.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SONHOS -->
+  <section id="sonhos">
+
+    <h2>Sonhos e futuro</h2>
+
+    <div class="dream">
+
+      <div class="dream-icon">💜</div>
+
+      <h3 style="font-size:28px;">
+        O grande sonho
+      </h3>
+
+      <p style="margin-top:15px;">
+        Um dos maiores sonhos de Miliane é
+        <strong>ir a um show do BTS</strong>.
+      </p>
+
+    </div>
+
+    <div class="future-list" style="margin-top:30px;">
+
+      <div class="future-item">
+        💍 <strong>Construir uma vida a dois</strong><br>
+        Um dos planos é casar com você.
+      </div>
+
+      <div class="future-item">
+        👶 <strong>Ter uma família</strong><br>
+        Ela imagina ter três filhos no futuro.
+      </div>
+
+      <div class="future-item">
+        💼 <strong>Ter um emprego estável</strong><br>
+        Buscar independência e estabilidade profissional.
+      </div>
+
+      <div class="future-item">
+        🇮🇪 <strong>Morar na Irlanda</strong><br>
+        A Irlanda faz parte dos planos para o futuro.
+      </div>
+
+      <div class="future-item">
+        ❤️ <strong>Estar com você</strong><br>
+        Daqui a alguns anos, ela quer continuar ao seu lado.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOTOS -->
+  <section id="fotos">
+
+    <h2>Galeria de memórias</h2>
+
+    <div class="gallery">
+
+      <!--
+      PARA ADICIONAR UMA FOTO:
+
+      1. coloque a foto dentro da pasta "fotos"
+      2. substitua o bloco abaixo por:
+
+      <div class="photo">
+        <img src="fotos/nome-da-foto.jpeg" alt="Miliane">
+      </div>
+      -->
+
+      <div class="photo">
+        <div class="photo-placeholder">
+          <span>📸</span>
+          <strong>Foto 1</strong>
+          <br>
+          Adicione uma memória aqui.
+        </div>
+      </div>
+
+      <div class="photo">
+        <div class="photo-placeholder">
+          <span>📸</span>
+          <strong>Foto 2</strong>
+          <br>
+          Adicione uma memória aqui.
+        </div>
+      </div>
+
+      <div class="photo">
+        <div class="photo-placeholder">
+          <span>📸</span>
+          <strong>Foto 3</strong>
+          <br>
+          Adicione uma memória aqui.
+        </div>
+      </div>
+
+      <div class="photo">
+        <div class="photo-placeholder">
+          <span>📸</span>
+          <strong>Foto 4</strong>
+          <br>
+          Adicione uma memória aqui.
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- VÍDEOS -->
+  <section>
+
+    <h2>Vídeos</h2>
+
+    <div class="video-box">
+
+      <!--
+      Para colocar um vídeo:
+
+      <video controls>
+        <source src="videos/video1.mp4" type="video/mp4">
+      </video>
+      -->
+
+      <div style="font-size:55px;">🎥</div>
+
+      <h3>Memórias em vídeo</h3>
+
+      <p>
+        Aqui poderão ficar vídeos de momentos especiais,
+        viagens, treinos, amigas ou lembranças.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- POR QUE ELA É ESPECIAL -->
+  <section>
+
+    <h2>Por que ela é especial?</h2>
+
+    <div class="special">
+
+      <p>
+        Miliane é especial porque ela tem seu próprio jeito
+        de enxergar a vida. É extrovertida, gosta de estar
+        perto das pessoas importantes para ela e encontra
+        felicidade em coisas simples: treinar, ouvir música,
+        se maquiar, conversar e aproveitar os momentos.
+      </p>
+
+      <p style="margin-top:20px;">
+        Ela também aprendeu que nem todas as pessoas precisam
+        permanecer em sua vida. A escolha de se afastar de
+        pessoas falsas mostra que ela sabe reconhecer aquilo
+        que não lhe faz bem e seguir em frente.
+      </p>
+
+      <p style="margin-top:20px;">
+        Seus sonhos mostram uma garota que olha para o futuro:
+        um show do BTS, uma carreira estável, uma família,
+        uma vida na Irlanda e, acima de tudo, a vontade de
+        estar ao lado de quem ama.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- MENSAGEM -->
+  <section id="mensagem">
+
+    <h2>Uma mensagem para Miliane</h2>
+
+    <div class="quote">
+
+      <p>
+        “Que você nunca deixe de ser essa pessoa única,
+        extrovertida e cheia de sonhos que você é.
+        Continue acreditando em você, correndo atrás dos
+        seus objetivos e escolhendo ficar perto de quem
+        realmente te faz bem.”
+      </p>
+
+      <p style="margin-top:25px;">
+        Que todos os seus sonhos encontrem um caminho para
+        acontecer — inclusive aquele show do BTS. 💜
+      </p>
+
+      <p style="margin-top:25px;font-size:18px;">
+        E que os próximos capítulos da sua história sejam
+        ainda mais bonitos que os anteriores.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL -->
+  <footer>
+
+    <h2 style="color:white;margin-bottom:15px;">
+      A história continua...
+    </h2>
+
+    <p>
+      Miliane Almeida Muller
+    </p>
+
+    <p style="margin-top:10px;">
+      23 de outubro de 2011
+    </p>
+
+    <p style="margin-top:25px;font-size:25px;">
+      💜 🌷 🤸‍♀️ 🎧 ✨
+    </p>
+
+    <p style="margin-top:25px;font-size:13px;">
+      Feito com carinho para guardar uma história especial.
+    </p>
+
+  </footer>
+
+</body>
+</html>
